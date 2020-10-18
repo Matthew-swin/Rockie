@@ -18,7 +18,7 @@ export class GameService {
     //need to set the winner in this field
     if (playerOption == 'Rock' && AIOption == 'Rock' || playerOption == 'Paper' && AIOption == 'Paper' || playerOption == 'Scissors' && AIOption == 'Scissors')
     {
-      this.Outcome = 'Draw'
+      this.Outcome = 'Draw';
     }
     if (playerOption == 'Rock' && AIOption == 'Scissors' || playerOption == 'Scissors' && AIOption == 'Paper' || playerOption == 'Paper' && AIOption == 'Rock')
     {
@@ -30,16 +30,19 @@ export class GameService {
     }
   }
 
-  AISelection(option: 'Rock' | 'Paper' | 'Scissors') {
+  AISelection(option?: 'Rock' | 'Paper' | 'Scissors') {
     //need to set the AI option here to random
     //just to test setting option to Rock
     option = 'Rock';
     this.AIOption = option;
   }
 
-  CommitOutcome(option: 'Rock' | 'Paper' | 'Scissors') {
+  CommitOutcome() {
     of(null).pipe(delay(1000)).subscribe(() => {
-      this.selection = option;
+      // set AI selection
+      this.AISelection()
+      // set outcome
+      this.CalcOutcome(this.selection,this.AIOption)
       this.router.navigateByUrl('/result');
     });
   }
