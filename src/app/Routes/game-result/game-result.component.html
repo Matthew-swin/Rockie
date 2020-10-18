@@ -1,3 +1,12 @@
-<h1>{{GameService.Outcome}}</h1>
-<div>{{GameService.selection}}</div>
-<div>{{GameService.AIOption}}</div>
+<h1>What a {{GameService.Outcome}}</h1>
+<div class="display"
+[class.rock] = "GameService.selection === 'Rock'"
+[class.scissors] = "GameService.selection === 'Scissors'"
+[class.paper] = "GameService.selection === 'Paper'"
+>{{GameService.selection}}</div>
+<div class="display"
+[class.rock] = "GameService.AIOption === 'Rock'"
+[class.scissors] = "GameService.AIOption === 'Scissors'"
+[class.paper] = "GameService.AIOption === 'Paper'"
+>{{GameService.AIOption}}</div>
+<a routerLink="display">play again</a>
