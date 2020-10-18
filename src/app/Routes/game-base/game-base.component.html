@@ -1,1 +1,5 @@
-<p>game-base works!</p>
+<p>Go ahead and pick you pussy!</p>
+<div class="display paper" (click)="SelectOption('Paper')">Paper</div>
+<div class="display scissors" (click)="SelectOption('Scissors')">Scissors</div>
+<div class="display rock" (click)="SelectOption('Rock')">Rock</div>
+<button class="shoot" (click)="Shoot()" [disabled]="optionPicked === false">Shoot</button>

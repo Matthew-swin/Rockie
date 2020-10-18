@@ -9,11 +9,16 @@ import {GameService} from '../../services/game.service'
 export class GameBaseComponent implements OnInit {
 
   constructor(private GameService: GameService) { }
-
+  optionPicked: true|false = false;
   ngOnInit(): void {
   }
 
-  Selection(){
-    this.Selection
+  SelectOption(option: 'Rock' | 'Paper' | 'Scissors'){
+    this.optionPicked = true;
+    this.GameService.SetSelection(option);
+  }
+
+  Shoot(){
+    this.GameService.CommitOutcome();
   }
 }

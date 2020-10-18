@@ -14,6 +14,10 @@ export class GameService {
 
   constructor(private router: Router) { }
 
+  SetSelection(playerOption: 'Rock' | 'Paper' | 'Scissors'){
+    this.selection = playerOption;
+  }
+
   CalcOutcome(playerOption: 'Rock' | 'Paper' | 'Scissors', AIOption: 'Rock' | 'Paper' | 'Scissors') {
     //need to set the winner in this field
     if (playerOption == 'Rock' && AIOption == 'Rock' || playerOption == 'Paper' && AIOption == 'Paper' || playerOption == 'Scissors' && AIOption == 'Scissors')
