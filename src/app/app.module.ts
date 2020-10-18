@@ -15,6 +15,7 @@ import { GameResultComponent } from './Routes/game-result/game-result.component'
   imports: [
     BrowserModule,
     AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
