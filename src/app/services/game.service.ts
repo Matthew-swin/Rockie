@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import {GameResult, PlayerChoice} from '../game';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -51,5 +53,15 @@ export class GameService {
     });
   }
 
+  // yayaya(option: 'Rock' | 'Paper' | 'Scissors') {
+  //   let request = this.HttpClient.post<PlayerChoice>("http://localhost:5000/game", {
+  //     PlayerChoice: option
 
+  //   } as GameResult);
+
+  }
+
+  
 }
+
+
