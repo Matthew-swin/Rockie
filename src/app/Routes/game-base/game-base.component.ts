@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { stringify } from 'querystring';
 import {GameService} from '../../services/game.service'
 
 @Component({
@@ -19,6 +20,6 @@ export class GameBaseComponent implements OnInit {
   }
 
   Shoot(){
-    this.GameService.CommitOutcome();
+    this.GameService.CommitOutcome(this.GameService.selection);
   }
 }

@@ -3,7 +3,7 @@ export interface PlayerChoice {
 }
 
 export interface GameResult {
-    "PlayerChoice": string,
-    "CpuChoice": string,
-    "Result": string
+    "playerChoice": string,
+    "cpuChoice": string,
+    "result": string
 }
