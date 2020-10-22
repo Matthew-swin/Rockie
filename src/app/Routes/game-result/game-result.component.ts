@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//importing GameService so i can use its values and methods
 import {GameService} from '../../services/game.service'
 
 @Component({
@@ -8,9 +9,15 @@ import {GameService} from '../../services/game.service'
 })
 export class GameResultComponent implements OnInit {
 
-  constructor(private GameService: GameService) { }
+  //Need to have the Gameservice as public as I need to display information it holds in this component
+  //Below will be an example of keeping it private and still getting the info using get
+  constructor(public GameService: GameService) { }
 
   ngOnInit(): void {
   }
 
+  // This is the example of getting the information and keeping GameService as private
+  // get AiOption(){
+  //   return this.GameService.AIOption
+  // }
 }
