@@ -11,6 +11,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class GameService {
 
   public selection?: 'Rock' | 'Paper' | 'Scissors';
+  //Private variables should have an underscore at the beginning to represent it is private
   private _AIOption?: string;
   get AIOption(){
     return this._AIOption;
@@ -62,13 +63,17 @@ export class GameService {
   // }
 
   CommitOutcome(selection: 'Rock' | 'Paper' | 'Scissors') {
+    //<gameResult>Is an interface used to show what will be received
+    //the URL is where exactly will be targetted by the request
     let request = this.httpClient.post<GameResult>("http://localhost:5000/game", {
       PlayerChoice: selection
 
     } as PlayerChoice);
+    //response is going to be the API reply so we can then allocate the response values to variables
     request.subscribe((response =>{
       this._AIOption = response.cpuChoice;
       this._Outcome = response.result;
+      //after the has functioned the below will route us to the results component
       this.router.navigateByUrl('/result');
     }));
 
