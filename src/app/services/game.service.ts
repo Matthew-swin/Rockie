@@ -11,8 +11,14 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class GameService {
 
   public selection?: 'Rock' | 'Paper' | 'Scissors';
-  private AIOption?: string;
-  private Outcome?: string;
+  private _AIOption?: string;
+  get AIOption(){
+    return this._AIOption;
+  }
+  private _Outcome?: string;
+  get Outcome(){
+    return this._Outcome;
+  }
 
   constructor(private router: Router, public httpClient:HttpClient) { }
 
@@ -61,8 +67,8 @@ export class GameService {
 
     } as PlayerChoice);
     request.subscribe((response =>{
-      this.AIOption = response.cpuChoice;
-      this.Outcome = response.result;
+      this._AIOption = response.cpuChoice;
+      this._Outcome = response.result;
       this.router.navigateByUrl('/result');
     }));
 

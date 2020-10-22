@@ -16,3 +16,21 @@
 .display.rock{
     background-color: red;
 }
+
+.rockImage{
+    height: 50px;  
+    width: 50px; 
+    margin: 5px;
+}
+
+.paperImage{
+    height: 50px;  
+    width: 50px; 
+    margin: 5px;
+}
+
+.scissorsImage{
+    height: 50px;  
+    width: 50px; 
+    margin: 5px;
+}

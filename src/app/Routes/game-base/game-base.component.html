@@ -1,5 +1,12 @@
 <p>Go ahead and pick you pussy!</p>
-<div class="display paper" (click)="SelectOption('Paper')">Paper</div>
-<div class="display scissors" (click)="SelectOption('Scissors')">Scissors</div>
-<div class="display rock" (click)="SelectOption('Rock')">Rock</div>
+<div class="display paper" (click)="SelectOption('Paper')">
+    <img class="paperImage" src="/assets/paper.png" alt="">
+    Paper</div>
+
+<div class="display scissors" (click)="SelectOption('Scissors')">
+    <img class="scissorsImage" src="/assets/scissors.png" alt="">
+    Scissors</div>
+<div class="display rock" (click)="SelectOption('Rock')">
+    <img class="rockImage" src="/assets/rock.png" alt="">
+    Rock</div>
 <button class="shoot" (click)="Shoot()" [disabled]="optionPicked === false">Shoot</button>
