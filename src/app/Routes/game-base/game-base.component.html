@@ -9,19 +9,19 @@
     all round make it sexy
  -->
 <p>Go ahead and pick you pussy!</p>
-    <div [ngClass]="{SelectedOption: this.highlighted == 'Paper'}" class="display paper" (click)="SelectOption('Paper')">
+    <div [ngClass]="{SelectedOption: this.toggleHighlighted == 'Paper'}" class="display paper" (click)="SelectOption('Paper')">
         <!-- storing the images or media in the asset folder
     could also put in the URL of an image
     -->
         <img class="Image" src="/assets/paper.png" alt="">
         Paper</div>
-    <!-- [ngClass]="{SelectedOption: this.highlighted == 'Scissors'}"
+    <!-- [ngClass]="{SelectedOption: this.toggleHighlighted == 'Scissors'}"
             this works by setting the class "SelectedOption" when the following option is true 
-            in this case its when this.highlighted == the option picked-->
-    <div [ngClass]="{SelectedOption: this.highlighted == 'Scissors'}" class="display scissors" (click)="SelectOption('Scissors')" >
+            in this case its when this.toggleHighlighted == the option picked-->
+    <div [ngClass]="{SelectedOption: this.toggleHighlighted == 'Scissors'}" class="display scissors" (click)="SelectOption('Scissors')" >
         <img class="Image" src="/assets/scissors.png" alt="">
         Scissors</div>
-    <div [ngClass]="{SelectedOption: this.highlighted == 'Rock'}" class="display rock" (click)="SelectOption('Rock')">
+    <div [ngClass]="{SelectedOption: this.toggleHighlighted == 'Rock'}" class="display rock" (click)="SelectOption('Rock')">
         <img class="Image" src="/assets/rock.png" alt="">
         Rockie</div>
         <br>

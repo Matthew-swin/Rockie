@@ -25,7 +25,8 @@
 
 
 .shoot {
-
+display: flex;
+align-self: center;
 }
 
 .SelectedOption {

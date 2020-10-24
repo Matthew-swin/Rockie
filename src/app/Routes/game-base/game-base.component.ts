@@ -11,7 +11,7 @@ export class GameBaseComponent implements OnInit {
 
   constructor(private GameService: GameService) { }
   optionPicked: true | false = false;
-  highlighted: 'Rock' | 'Paper' | 'Scissors';
+  toggleHighlighted: 'Rock' | 'Paper' | 'Scissors';
   ngOnInit(): void {
   }
 
@@ -20,7 +20,7 @@ export class GameBaseComponent implements OnInit {
   SelectOption(option: 'Rock' | 'Paper' | 'Scissors') {
     this.optionPicked = true;
     this.GameService.SetSelection(option);
-    this.highlighted = option;
+    this.toggleHighlighted = option;
   }
 
   Shoot() {
