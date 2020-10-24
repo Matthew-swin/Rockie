@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { stringify } from 'querystring';
-import {GameService} from '../../services/game.service'
+import { GameService } from '../../services/game.service'
 
 @Component({
   selector: 'app-game-base',
@@ -10,16 +10,20 @@ import {GameService} from '../../services/game.service'
 export class GameBaseComponent implements OnInit {
 
   constructor(private GameService: GameService) { }
-  optionPicked: true|false = false;
+  optionPicked: true | false = false;
+  highlighted: 'Rock' | 'Paper' | 'Scissors';
   ngOnInit(): void {
   }
 
-  SelectOption(option: 'Rock' | 'Paper' | 'Scissors'){
+  highlight: boolean = false;
+
+  SelectOption(option: 'Rock' | 'Paper' | 'Scissors') {
     this.optionPicked = true;
     this.GameService.SetSelection(option);
+    this.highlighted = option;
   }
 
-  Shoot(){
+  Shoot() {
     this.GameService.CommitOutcome(this.GameService.selection);
   }
 }

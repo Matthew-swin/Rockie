@@ -1,36 +1,37 @@
 .display{
-    height: 100px;
-    width: 100px;
-    margin: 10px;
+    height: 300px;
+    width: 300px;
+    margin: 40px;
     display: inline-block;
 }
 
 .display.paper{
-    background-color: green;
+    /* background-color: green; */
 }
 
 .display.scissors{
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .display.rock{
-    background-color: red;
+    /* background-color: red; */
 }
 
-.rockImage{
-    height: 50px;  
-    width: 50px; 
+.Image{
+    height: 200px;  
+    width: 200px; 
     margin: 5px;
 }
 
-.paperImage{
-    height: 50px;  
-    width: 50px; 
-    margin: 5px;
+
+.shoot {
+
 }
 
-.scissorsImage{
-    height: 50px;  
-    width: 50px; 
-    margin: 5px;
+.SelectedOption {
+    background-color: yellow;
+}
+
+.none {
+    background: none;
 }

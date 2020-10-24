@@ -1,12 +1,29 @@
-<p>Go ahead and pick you pussy!</p>
-<div class="display paper" (click)="SelectOption('Paper')">
-    <!-- <img class="paperImage" src="../../../assets/paper.png" alt=""> -->
-    Paper</div>
+<!-- 
+    what i want to do:
+    on hover will increase the size of the choice (rock,paper,scissors)
+    on hover will have a pop up panel describing the item (most likely jokes)
+    on pick will change background colour to light grey or something sxy -- [ngClass]="{'SelectedOption: highlighted, none:!highlighted'"
+    https://codesandbox.io/s/38xzry6qvq?file=/src/app/app.component.ts
 
-<div class="display scissors" (click)="SelectOption('Scissors')">
-    <!-- <img class="scissorsImage" src="../../../assets/scissors.png" alt=""> -->
-    Scissors</div>
-<div class="display rock" (click)="SelectOption('Rock')">
-    <!-- <img class="rockImage" src="../../../assets/rock.png" alt=""> -->
-    Rock</div>
+    centre this component
+    all round make it sexy
+ -->
+<p>Go ahead and pick you pussy!</p>
+    <div [ngClass]="{SelectedOption: this.highlighted == 'Paper'}" class="display paper" (click)="SelectOption('Paper')">
+        <!-- storing the images or media in the asset folder
+    could also put in the URL of an image
+    -->
+        <img class="Image" src="/assets/paper.png" alt="">
+        Paper</div>
+    <!-- [ngClass]="{SelectedOption: this.highlighted == 'Scissors'}"
+            this works by setting the class "SelectedOption" when the following option is true 
+            in this case its when this.highlighted == the option picked-->
+    <div [ngClass]="{SelectedOption: this.highlighted == 'Scissors'}" class="display scissors" (click)="SelectOption('Scissors')" >
+        <img class="Image" src="/assets/scissors.png" alt="">
+        Scissors</div>
+    <div [ngClass]="{SelectedOption: this.highlighted == 'Rock'}" class="display rock" (click)="SelectOption('Rock')">
+        <img class="Image" src="/assets/rock.png" alt="">
+        Rockie</div>
+        <br>
+<!-- setting this below to disabled if an option hasnt been picked -->
 <button class="shoot" (click)="Shoot()" [disabled]="optionPicked === false">Shoot</button>
