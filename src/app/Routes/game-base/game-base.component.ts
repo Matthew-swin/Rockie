@@ -10,7 +10,7 @@ export class GameBaseComponent implements OnInit {
 
   constructor(private GameService: GameService) { }
 
-  optionPicked: true | false = false;
+  SelectionMade: true | false = false;
   toggleHighlighted: 'Rock' | 'Paper' | 'Scissors';
   colour: string = 'yellow';
 
@@ -20,7 +20,7 @@ export class GameBaseComponent implements OnInit {
   highlight: boolean = false;
 
   SelectOption(option: 'Rock' | 'Paper' | 'Scissors') {
-    this.optionPicked = true;
+    this.SelectionMade = true;
     this.GameService.SetSelection(option);
     this.toggleHighlighted = option;
   }
