@@ -9,12 +9,14 @@ import { GameBaseComponent } from './Routes/game-base/game-base.component';
 import { GameResultComponent } from './Routes/game-result/game-result.component';
 //HttpClientModule enables me to use restful API features like GET, POST etc
 import { HttpClientModule} from '@angular/common/http';
+import { LeaderboardComponent } from './Routes/leaderboard/leaderboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameBaseComponent,
-    GameResultComponent
+    GameResultComponent,
+    LeaderboardComponent
   ],
   //also need to import routing and HTTPclient here
   imports: [

@@ -5,18 +5,6 @@
     display: inline-block;
 }
 
-.display.paper{
-    /* background-color: green; */
-}
-
-.display.scissors{
-    /* background-color: blue; */
-}
-
-.display.rock{
-    /* background-color: red; */
-}
-
 .Image{
     height: 200px;  
     width: 200px; 
@@ -35,4 +23,8 @@ align-self: center;
 
 .none {
     background: none;
+}
+
+.changeBackground{
+    background-color: yellow;
 }

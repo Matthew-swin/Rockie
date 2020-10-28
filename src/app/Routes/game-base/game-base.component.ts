@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { stringify } from 'querystring';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service'
 
 @Component({
@@ -10,8 +9,11 @@ import { GameService } from '../../services/game.service'
 export class GameBaseComponent implements OnInit {
 
   constructor(private GameService: GameService) { }
+
   optionPicked: true | false = false;
   toggleHighlighted: 'Rock' | 'Paper' | 'Scissors';
+  colour: string = 'yellow';
+
   ngOnInit(): void {
   }
 
@@ -25,5 +27,10 @@ export class GameBaseComponent implements OnInit {
 
   Shoot() {
     this.GameService.CommitOutcome(this.GameService.selection);
+  }
+
+  changeBackground($event){
+    this.colour = $event.type == 'mouseover' ? 'yellow' : 'pink';
+    console.log("fuck");
   }
 }
