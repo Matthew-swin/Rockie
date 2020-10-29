@@ -1,6 +1,7 @@
 //Import all the shiz you need for the app here!!
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 //AppRoutingModule allows me to route between different coponents
 import { AppRoutingModule } from './app-routing.module';
@@ -10,17 +11,20 @@ import { GameResultComponent } from './Routes/game-result/game-result.component'
 //HttpClientModule enables me to use restful API features like GET, POST etc
 import { HttpClientModule} from '@angular/common/http';
 import { LeaderboardComponent } from './Routes/leaderboard/leaderboard.component';
+import { UsernameComponent } from './Routes/username/username.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameBaseComponent,
     GameResultComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    UsernameComponent
   ],
   //also need to import routing and HTTPclient here
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule
     

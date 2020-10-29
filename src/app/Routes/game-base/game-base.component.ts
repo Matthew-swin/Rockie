@@ -8,7 +8,7 @@ import { GameService } from '../../services/game.service'
 })
 export class GameBaseComponent implements OnInit {
 
-  constructor(private GameService: GameService) { }
+  constructor(public GameService: GameService) { }
 
   SelectionMade: true | false = false;
   toggleHighlighted: 'Rock' | 'Paper' | 'Scissors';
@@ -26,11 +26,12 @@ export class GameBaseComponent implements OnInit {
   }
 
   Shoot() {
+    
     this.GameService.CommitOutcome(this.GameService.selection);
   }
 
   changeBackground($event){
-    this.colour = $event.type == 'mouseover' ? 'yellow' : 'pink';
+    this.colour = $event.type == 'mouseover' ? 'yellow' : 'none';
     console.log("fuck");
   }
 }

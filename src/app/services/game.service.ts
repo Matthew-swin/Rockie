@@ -10,6 +10,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class GameService {
 
+  public userName?: string = null;
   public selection?: 'Rock' | 'Paper' | 'Scissors';
   //Private variables should have an underscore at the beginning to represent it is private
   private _AIOption?: string;

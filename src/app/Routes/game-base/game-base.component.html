@@ -9,6 +9,10 @@
     all round make it sexy
  -->
 <p>Go ahead and pick you pussy!</p>
+<!-- 
+    going to have to fix this, probs need to do this another way
+    <input type="text" placeholder="username" [(ngModel)]="GameService.userName"> -->
+
     <div [ngClass]="{SelectedOption: this.toggleHighlighted == 'Paper'}" class="display paper" (click)="SelectOption('Paper')">
         <!-- storing the images or media in the asset folder
     could also put in the URL of an image
@@ -27,3 +31,4 @@
         <br>
 <!-- setting this below to disabled if an option hasnt been picked -->
 <button class="shoot" (click)="Shoot()" [disabled]="SelectionMade === false">Shoot</button>
+
