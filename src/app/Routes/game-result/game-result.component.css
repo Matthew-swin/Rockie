@@ -21,8 +21,21 @@
 img {
     height: 300px;
     width: 300px;
+    padding: 30px;
 }
 h1 {
-    display: flex;
-    justify-self: center;
+    text-align: center;
+    padding: 10px;
+}
+.win{
+font-size: 30px;
+color: green;
+}
+.lose{
+font-size: 30px;
+color: red;
+}
+.draw{
+font-size: 35px;
+color: black;
 }

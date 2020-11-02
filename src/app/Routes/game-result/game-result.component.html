@@ -1,13 +1,25 @@
-<h1>{{GameService.Outcome}}</h1>
+<div *ngIf="this.GameService.Outcome == 'Lose'"><h1>Loser Loser Loser Loser</h1></div>
+<div *ngIf="this.GameService.Outcome == 'Win'"><h1>Wow this is a surprise... well congrats i guess</h1></div>
+<div *ngIf="this.GameService.Outcome == 'Draw'"><h1>Can even win or lose. What are you doing with your life</h1></div>
+<!-- <h1>{{GameService.Outcome}}</h1> -->
 <div class="container">
     <div class="Playerchoice">
-        <p>{{GameService.userName}}</p>
+        <p [ngClass]="{
+            'win':this.GameService.Outcome == 'Win',
+            'lose':this.GameService.Outcome == 'Lose',
+            'draw':this.GameService.Outcome == 'Draw'
+        }">{{GameService.userName}}</p>
         <div *ngIf="this.GameService.selection == 'Rock'"><img src="/assets/rock.png"></div>
         <div *ngIf="this.GameService.selection == 'Paper'"><img src="/assets/paper.png"> </div>
         <div *ngIf="this.GameService.selection == 'Scissors'"><img src="/assets/scissors.png"></div>
     </div>
+    <p>vs</p>
     <div class="Compchoice">
-        <p>{{GameService.CompName}}</p>
+        <p [ngClass]="{
+            'win':this.GameService.Outcome == 'Lose',
+            'lose':this.GameService.Outcome == 'Win',
+            'draw':this.GameService.Outcome == 'Draw'
+        }">{{GameService.CompName}}</p>
         <div *ngIf="this.GameService.AIOption == 'Rock'"><img src="/assets/rock.png"></div>
         <div *ngIf="this.GameService.AIOption == 'Paper'"><img src="/assets/paper.png"> </div>
         <div *ngIf="this.GameService.AIOption == 'Scissors'"><img src="/assets/scissors.png"></div>
