@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service'
 
+
 @Component({
   selector: 'app-game-base',
   templateUrl: './game-base.component.html',
@@ -27,7 +28,8 @@ export class GameBaseComponent implements OnInit {
 
   Shoot() {
     
-    this.GameService.CommitOutcome(this.GameService.selection);
+    this.GameService.CommitOutcome(this.GameService.selection, this.GameService.userName);
+    this.GameService.InputFieldState = true;
   }
 
   changeBackground($event){

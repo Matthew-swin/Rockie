@@ -16,6 +16,10 @@ export class GameResultComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  tryAgain(){
+    this.GameService.InputFieldState = false;
+  }
+
   // This is the example of getting the information and keeping GameService as private
   // get AiOption(){
   //   return this.GameService.AIOption

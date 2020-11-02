@@ -7,9 +7,7 @@
 
     centre this component
     all round make it sexy
- -->
-<p>Go ahead and pick you pussy!</p>
-<!-- 
+
     going to have to fix this, probs need to do this another way
     <input type="text" placeholder="username" [(ngModel)]="GameService.userName"> -->
 
@@ -31,4 +29,5 @@
         <br>
 <!-- setting this below to disabled if an option hasnt been picked -->
 <button class="shoot" (click)="Shoot()" [disabled]="SelectionMade === false">Shoot</button>
-
+<br>
+<a routerLink="/Leaderboard">Score board</a>

@@ -10,6 +10,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class GameService {
 
+  public InputFieldState: boolean = false;
   public userName?: string = null;
   public selection?: 'Rock' | 'Paper' | 'Scissors';
   //Private variables should have an underscore at the beginning to represent it is private
@@ -63,11 +64,12 @@ export class GameService {
   //   });
   // }
 
-  CommitOutcome(selection: 'Rock' | 'Paper' | 'Scissors') {
+  CommitOutcome(selection: 'Rock' | 'Paper' | 'Scissors',username:string) {
     //<gameResult>Is an interface used to show what will be received
     //the URL is where exactly will be targetted by the request
     let request = this.httpClient.post<GameResult>("http://localhost:5000/game", {
-      PlayerChoice: selection
+      PlayerChoice: selection,
+      userName: username
 
     } as PlayerChoice);
     //response is going to be the API reply so we can then allocate the response values to variables
@@ -77,9 +79,7 @@ export class GameService {
       //after the has functioned the below will route us to the results component
       this.router.navigateByUrl('/result');
     }));
-
   }
-
   
 }
 

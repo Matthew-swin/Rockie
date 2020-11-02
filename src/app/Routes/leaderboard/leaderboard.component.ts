@@ -13,4 +13,8 @@ export class LeaderboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  tryAgain(){
+    this.GameService.InputFieldState = false;
+  }
+
 }
