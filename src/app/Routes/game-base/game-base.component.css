@@ -18,30 +18,43 @@
     height: 300px;  
     width: 300px; 
     padding: 5px;
+    transition: 1.5s;
 }
 img:hover{
-    background-color: yellow;
+    transform:rotate(360deg);
+    background-color: black;
+    border-radius: 20px;
+    height: 310px;
+    width: 310px;
 }
 
 .ShootandScore {
 /* for dem button options */
 justify-self: center;
+text-align: center;
 }
 
 
 .shoot {
 display: flex;
 align-self: center;
+background-color: black;
+border-radius: 5px;
+text-align: center;
+line-height: 50px;
+font-size: 23px;
+color: white;
+width: 100px;
+height: 50px;
 }
 
 .SelectedOption {
-    background-color: yellow;
+    background-color: black;
+    border-radius: 20px;
 }
 
 .none {
     background: none;
 }
 
-.changeBackground{
-    background-color: yellow;
-}
+
