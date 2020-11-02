@@ -1,10 +1,18 @@
 <h1>{{GameService.Outcome}}</h1>
-<div class="display" [class.rock]="GameService.selection === 'Rock'"
-    [class.scissors]="GameService.selection === 'Scissors'" [class.paper]="GameService.selection === 'Paper'">
-    {{GameService.selection}}</div>
-<div class="display" [class.rock]="GameService.AIOption === 'Rock'"
-    [class.scissors]="GameService.AIOption === 'Scissors'" [class.paper]="GameService.AIOption === 'Paper'">
-    {{GameService.AIOption}}</div>
-<a routerLink="base" (click)="tryAgain()">play again</a> 
+<div class="container">
+    <div class="Playerchoice">
+        <p>{{GameService.userName}}</p>
+        <div *ngIf="this.GameService.selection == 'Rock'"><img src="/assets/rock.png"></div>
+        <div *ngIf="this.GameService.selection == 'Paper'"><img src="/assets/paper.png"> </div>
+        <div *ngIf="this.GameService.selection == 'Scissors'"><img src="/assets/scissors.png"></div>
+    </div>
+    <div class="Compchoice">
+        <p>{{GameService.CompName}}</p>
+        <div *ngIf="this.GameService.AIOption == 'Rock'"><img src="/assets/rock.png"></div>
+        <div *ngIf="this.GameService.AIOption == 'Paper'"><img src="/assets/paper.png"> </div>
+        <div *ngIf="this.GameService.AIOption == 'Scissors'"><img src="/assets/scissors.png"></div>
+    </div>
+</div>
+<a routerLink="base" (click)="tryAgain()">play again</a>
 <br>
-<a routerLink="/Leaderboard" >Score board</a>
+<a routerLink="/Leaderboard">Score board</a>

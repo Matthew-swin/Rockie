@@ -4,14 +4,25 @@
     margin: 10px;
 }
 
-.display.paper{
-    background-color: green;
+.container {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.Playerchoice{
+    display: inline;
 }
 
-.display.scissors{
-    background-color: blue;
+.Compchoice{
+    display: inline;
 }
 
-.display.rock{
-    background-color: red;
+
+img {
+    height: 300px;
+    width: 300px;
+}
+h1 {
+    display: flex;
+    justify-self: center;
 }

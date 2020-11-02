@@ -8,7 +8,8 @@ import {GameService} from '../../services/game.service'
   styleUrls: ['./game-result.component.css']
 })
 export class GameResultComponent implements OnInit {
-
+ 
+  OptionUsed: boolean = false;
   //Need to have the Gameservice as public as I need to display information it holds in this component
   //Below will be an example of keeping it private and still getting the info using get
   constructor(public GameService: GameService) { }

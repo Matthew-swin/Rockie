@@ -4,6 +4,7 @@
 }
 
 .options {
+    padding: 30px;
 /* this is so i can centre the rock/paper/scissors  */
 }
 
@@ -20,12 +21,9 @@
     padding: 5px;
     transition: 1.5s;
 }
-img:hover{
-    transform:rotate(360deg);
-    background-color: black;
+img:active{
+    background-color: green;
     border-radius: 20px;
-    height: 310px;
-    width: 310px;
 }
 
 .ShootandScore {
@@ -39,6 +37,7 @@ text-align: center;
 display: flex;
 align-self: center;
 background-color: black;
+border: none;
 border-radius: 5px;
 text-align: center;
 line-height: 50px;
@@ -49,8 +48,10 @@ height: 50px;
 }
 
 .SelectedOption {
-    background-color: black;
+    background-color: yellow;
     border-radius: 20px;
+    height: 310px;
+    width: 310px;
 }
 
 .none {
