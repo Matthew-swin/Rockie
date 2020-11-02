@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { GameBaseComponent } from './Routes/game-base/game-base.component';
 import { GameResultComponent } from './Routes/game-result/game-result.component';
 import { LeaderboardComponent } from './Routes/leaderboard/leaderboard.component';
-import { UsernameComponent } from './Routes/username/username.component';
+import { UsernameComponent } from './components/username/username.component';
 
 @NgModule({
   declarations: [
