@@ -10,24 +10,33 @@
 
     going to have to fix this, probs need to do this another way
     <input type="text" placeholder="username" [(ngModel)]="GameService.userName"> -->
-
-    <div [ngClass]="{SelectedOption: this.toggleHighlighted == 'Paper'}" class="display paper" (click)="SelectOption('Paper')">
-        <!-- storing the images or media in the asset folder
+<div class="container">
+    <div class="options">
+        <div class="display paper"
+            (click)="SelectOption('Paper')">
+            <!-- storing the images or media in the asset folder
     could also put in the URL of an image
     -->
-        <img class="Image" src="/assets/paper.png" alt="">
-        Paper</div>
-    <!-- [ngClass]="{SelectedOption: this.toggleHighlighted == 'Scissors'}"
+            <img [ngClass]="{SelectedOption: this.toggleHighlighted == 'Paper'}" class="Image" src="/assets/paper.png" alt="">
+            </div>
+        <!-- [ngClass]="{SelectedOption: this.toggleHighlighted == 'Scissors'}"
             this works by setting the class "SelectedOption" when the following option is true 
             in this case its when this.toggleHighlighted == the option picked-->
-    <div [ngClass]="{SelectedOption: this.toggleHighlighted == 'Scissors'}" class="display scissors" (click)="SelectOption('Scissors')" >
-        <img class="Image" src="/assets/scissors.png" alt="">
-        Scissors</div>
-    <div [ngClass]="{SelectedOption: this.toggleHighlighted == 'Rock'}" class="display rock" (click)="SelectOption('Rock')" >
-        <img class="Image" src="/assets/rock.png" alt="">
-        Rockie</div>
+        <div  class="display scissors"
+            (click)="SelectOption('Scissors')">
+            <img [ngClass]="{SelectedOption: this.toggleHighlighted == 'Scissors'}" class="Image" src="/assets/scissors.png" alt="">
+            </div>
+        <div  class="display rock"
+            (click)="SelectOption('Rock')">
+            <img [ngClass]="{SelectedOption: this.toggleHighlighted == 'Rock'}" class="Image" src="/assets/rock.png" alt="">
+            </div>
         <br>
+    </div>
+
 <!-- setting this below to disabled if an option hasnt been picked -->
+<div class="ShootandScore">
 <button class="shoot" (click)="Shoot()" [disabled]="SelectionMade === false">Shoot</button>
 <br>
 <a routerLink="/Leaderboard">Score board</a>
+</div>
+</div>

@@ -1,3 +1,20 @@
+:host {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .datBoarderLife {
-    border:double 5px purple;
+    border:5px dotted purple;
+}
+
+.title {
+    justify-self: center;
+}
+
+.container {
+    display: grid;
+}
+
+.userName {
+    margin: 5px 5px;
+    justify-self: center;
 }
