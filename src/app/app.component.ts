@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LeaderboardService } from './services/leaderboard.service';
 
 
 @Component({
@@ -7,7 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Lets play a game';
+  title = 'Lets play a game';  
 
-  
+  constructor(public LeaderBoardService: LeaderboardService){
+
+  }
 }

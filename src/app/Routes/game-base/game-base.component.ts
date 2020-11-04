@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { LeaderboardService } from 'src/app/services/leaderboard.service';
 import { GameService } from '../../services/game.service'
 
 
@@ -9,7 +10,7 @@ import { GameService } from '../../services/game.service'
 })
 export class GameBaseComponent implements OnInit {
 
-  constructor(public GameService: GameService) { }
+  constructor(public GameService: GameService, public LeaderBoardService: LeaderboardService) { }
 
   SelectionMade: true | false = false;
   toggleHighlighted: 'Rock' | 'Paper' | 'Scissors';
@@ -35,5 +36,9 @@ export class GameBaseComponent implements OnInit {
   changeBackground($event){
     this.colour = $event.type == 'mouseover' ? 'yellow' : 'none';
     console.log("fuck");
+  }
+
+  LeaderBoard(){
+    this.LeaderBoardService.GetSomeLeaderBoardShit();
   }
 }
