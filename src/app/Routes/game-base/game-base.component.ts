@@ -38,7 +38,4 @@ export class GameBaseComponent implements OnInit {
     console.log("fuck");
   }
 
-  LeaderBoard(){
-    this.LeaderBoardService.GetSomeLeaderBoardShit();
-  }
 }

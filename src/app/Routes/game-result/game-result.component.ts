@@ -22,9 +22,6 @@ export class GameResultComponent implements OnInit {
     this.GameService.InputFieldState = false;
   }
 
-  LeaderBoard(){
-    this.LeaderBoardService.GetSomeLeaderBoardShit();
-  }
   // This is the example of getting the information and keeping GameService as private
   // get AiOption(){
   //   return this.GameService.AIOption
