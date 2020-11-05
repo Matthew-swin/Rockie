@@ -10,11 +10,19 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class GameService {
 
+  // stop the username being changed through the game
   public InputFieldState: boolean = false;
+  public maxRound: 1 | 3 | 5;
   public CompName: string = "CPU";
   public userName?: string = null;
   public selection?: 'Rock' | 'Paper' | 'Scissors';
+  //push all selections to this array
+  public selections: [];
   //Private variables should have an underscore at the beginning to represent it is private
+  private _roundNumber: number;
+  get roundNumber(){
+    return this._roundNumber;
+  }
   private _AIOption?: string;
   get AIOption(){
     return this._AIOption;
@@ -23,12 +31,18 @@ export class GameService {
   get Outcome(){
     return this._Outcome;
   }
-
+  
   constructor(private router: Router, public httpClient:HttpClient) { }
 
   SetSelection(playerOption: 'Rock' | 'Paper' | 'Scissors'){
     this.selection = playerOption;
   }
+
+  setMaxRounds(maxrounds: 1 | 3 | 5){
+    this.maxRound = maxrounds;
+  }
+
+
   /* 
   All the below was to make it work front end
   */

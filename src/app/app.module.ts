@@ -12,6 +12,7 @@ import { GameBaseComponent } from './Routes/game-base/game-base.component';
 import { GameResultComponent } from './Routes/game-result/game-result.component';
 import { LeaderboardComponent } from './Routes/leaderboard/leaderboard.component';
 import { UsernameComponent } from './components/username/username.component';
+import { RoundSelectComponent } from './Routes/round-select/round-select.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UsernameComponent } from './components/username/username.component';
     GameBaseComponent,
     GameResultComponent,
     LeaderboardComponent,
-    UsernameComponent
+    UsernameComponent,
+    RoundSelectComponent
   ],
   //also need to import routing and HTTPclient here
   imports: [
