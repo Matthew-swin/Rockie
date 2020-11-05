@@ -4,6 +4,7 @@ import { delay } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import {GameResult, PlayerChoice, GameResults, PlayerChoices} from '../Class/game';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { sanitizeIdentifier } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +20,8 @@ export class GameService {
   //push all selections to this array
   public selections: [];
   //Private variables should have an underscore at the beginning to represent it is private
-  private _roundNumber: number;
-  get roundNumber(){
-    return this._roundNumber;
-  }
+  public roundNumber: number = 1;
+
   private _AIOption?: string;
   get AIOption(){
     return this._AIOption;
@@ -31,7 +30,10 @@ export class GameService {
   get Outcome(){
     return this._Outcome;
   }
-  private _roundResult: GameResult;
+  private _playerChoiceAndUsername: PlayerChoice[] = [];
+  get playerChoiceAndUsername(){
+    return this._playerChoiceAndUsername;
+  }
 
   private _GameResults: GameResults;
   get GameResults(){
@@ -48,8 +50,45 @@ export class GameService {
     this.maxRound = maxrounds;
   }
 
+  SetplayerChoice(username: string, playerchoice: string ){
+    //set playerchoice array herererere
+    let pooPoo:PlayerChoice = {
+      playerChoice: playerchoice,
+    userName: username
+    } 
+    this._playerChoiceAndUsername = [...this._playerChoiceAndUsername, pooPoo]
+  }
+  
+  //Use this bad boi
+  CommitOutcomes(PlayerChoices: PlayerChoice[]) {
+     //the URL is where exactly will be targetted by the request
+    let request = this.httpClient.post<GameResults>("http://localhost:5000/game/round", PlayerChoices)
+    console.log(request);
+    //response is going to be the API reply so we can then allocate the response values to variables
+    request.subscribe((response =>{
+      this._GameResults = response;
+      this.router.navigateByUrl('results')
+    })); 
+    
+  }
 
-  /* 
+    // CommitOutcome(selection: 'Rock' | 'Paper' | 'Scissors',username:string) {
+  //   //<gameResult>Is an interface used to show what will be received
+  //   this.roundNumber + 1;
+  //   //the URL is where exactly will be targetted by the request
+  //   let request = this.httpClient.post<GameResult>("http://localhost:5000/game", {  
+  //     playerChoice: selection,
+  //     userName: username
+    
+  //   } as PlayerChoice);
+  //   //response is going to be the API reply so we can then allocate the response values to variables
+  //   request.subscribe((response =>{
+  //     this._AIOption = response.cpuChoice;
+  //     this._Outcome = response.result;
+  //   }));
+  // }
+
+   /* 
   All the below was to make it work front end
   */
   // CalcOutcome(playerOption: 'Rock' | 'Paper' | 'Scissors', AIOption: 'Rock' | 'Paper' | 'Scissors') {
@@ -84,42 +123,6 @@ export class GameService {
   //     this.router.navigateByUrl('/result');
   //   });
   // }
-
-  CommitOutcome(selection: 'Rock' | 'Paper' | 'Scissors',username:string) {
-    //<gameResult>Is an interface used to show what will be received
-    this.roundNumber + 1;
-    //the URL is where exactly will be targetted by the request
-    let request = this.httpClient.post<GameResult>("http://localhost:5000/game", {  
-      playerChoice: selection,
-      userName: username
-    
-    } as PlayerChoice);
-    //response is going to be the API reply so we can then allocate the response values to variables
-    request.subscribe((response =>{
-      this._AIOption = response.cpuChoice;
-      this._Outcome = response.result;
-    }));
-  }
-  
-  CommitOutcomes(GameResult: GameResult) {
-    //<gameResult>Is an interface used to show what will be received
-    if (this.maxRound == this.roundNumber)
-    {
-     //the URL is where exactly will be targetted by the request
-    let request = this.httpClient.post<GameResults>("http://localhost:5000/game", {  
-       
-        userName: GameResult.userName,
-        playerChoice: GameResult.playerChoice
-      
-    } as PlayerChoices);
-    //response is going to be the API reply so we can then allocate the response values to variables
-    request.subscribe((response =>{
-      this._AIOption = response.cpuChoice;
-      this._Outcome = response.result;
-    })); 
-    }
-  }
-
   
 }
 

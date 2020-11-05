@@ -14,13 +14,10 @@ export interface GameResult {
     "result": string,
     "userName": string
 }
+export interface GameResults {
+    "gameResults": GameResult[]
+}
 
 export interface UserName {
     "userName": string
-}
-
-
-
-export interface GameResults {
-    "gameResults": GameResult[]
 }

@@ -16,12 +16,12 @@ export class RoundSelectComponent implements OnInit {
   }
 
   selectRound(option: 1 | 3 | 5) {
+    this.GameService.maxRound = option;
     if (this.GameService.userName == null || this.GameService.userName == "") {
       alert("you need to add a username before starting");
     }
     else{
     this.GameService.InputFieldState = true;
-    this.GameService.maxRound = option;
     this.router.navigateByUrl('/base');
     }
   }

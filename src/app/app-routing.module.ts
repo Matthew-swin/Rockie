@@ -9,11 +9,11 @@ import { RoundSelectComponent } from './Routes/round-select/round-select.compone
 
 // add in the routes here
 const routes: Routes = [
+{path: "round", component: RoundSelectComponent},
 {path: "base", component: GameBaseComponent},
 {path: "result", component: GameResultComponent},
 {path: "Leaderboard", component: LeaderboardComponent},
-{path: "round", component: RoundSelectComponent},
-{path: "**", redirectTo: "base"}
+{path: "**", redirectTo: "round"}
 ];
 
 @NgModule({

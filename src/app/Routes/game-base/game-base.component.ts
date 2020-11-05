@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { LeaderboardService } from 'src/app/services/leaderboard.service';
 import { GameService } from '../../services/game.service'
 import { Router } from '@angular/router';
+import { NUMBER_TYPE } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -16,11 +17,12 @@ export class GameBaseComponent implements OnInit {
   SelectionMade: true | false = false;
   toggleHighlighted: 'Rock' | 'Paper' | 'Scissors';
   colour: string = 'yellow';
-
+  highlight: boolean = false;
+  roundnum: number = 1;
   ngOnInit(): void {
   }
 
-  highlight: boolean = false;
+  
 
   SelectOption(option: 'Rock' | 'Paper' | 'Scissors') {
     this.SelectionMade = true;
@@ -29,15 +31,16 @@ export class GameBaseComponent implements OnInit {
   }
 
   Shoot() {
-    this.GameService.CommitOutcome(this.GameService.selection, this.GameService.userName);
-    if (this.GameService.roundNumber == this.GameService.maxRound){
+    //increase round number
+    this.roundnum = this.roundnum + 1;
+    this.GameService.roundNumber = this.roundnum;
+    console.log(this.roundnum);
+    this.GameService.SetplayerChoice(this.GameService.selection, this.GameService.userName);
+    this.SelectionMade = false;
+    if (this.roundnum >= this.GameService.maxRound){
       this.router.navigateByUrl('/result')
     }
   }
 
-  changeBackground($event){
-    this.colour = $event.type == 'mouseover' ? 'yellow' : 'none';
-    console.log("fuck");
-  }
 
 }
