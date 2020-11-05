@@ -81,6 +81,7 @@ export class GameService {
 
   CommitOutcome(selection: 'Rock' | 'Paper' | 'Scissors',username:string) {
     //<gameResult>Is an interface used to show what will be received
+    this.roundNumber + 1;
     //the URL is where exactly will be targetted by the request
     let request = this.httpClient.post<GameResult>("http://localhost:5000/game", {
       PlayerChoice: selection,
@@ -92,7 +93,6 @@ export class GameService {
       this._AIOption = response.cpuChoice;
       this._Outcome = response.result;
       //after the has functioned the below will route us to the results component
-      this.router.navigateByUrl('/result');
     }));
   }
   

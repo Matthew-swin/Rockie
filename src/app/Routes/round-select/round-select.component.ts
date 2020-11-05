@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaderboardService } from 'src/app/services/leaderboard.service';
 import { Router, RouterModule } from '@angular/router';
-import {GameService} from '../../services/game.service'
+import { GameService } from '../../services/game.service'
 
 @Component({
   selector: 'app-round-select',
@@ -15,8 +15,14 @@ export class RoundSelectComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectRound(option: 1 | 3| 5){
+  selectRound(option: 1 | 3 | 5) {
+    if (this.GameService.userName == null || this.GameService.userName == "") {
+      alert("you need to add a username before starting");
+    }
+    else{
+    this.GameService.InputFieldState = true;
     this.GameService.maxRound = option;
     this.router.navigateByUrl('/base');
+    }
   }
 }

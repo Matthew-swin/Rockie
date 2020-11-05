@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { LeaderboardService } from 'src/app/services/leaderboard.service';
 import { GameService } from '../../services/game.service'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { GameService } from '../../services/game.service'
 })
 export class GameBaseComponent implements OnInit {
 
-  constructor(public GameService: GameService, public LeaderBoardService: LeaderboardService) { }
+  constructor(public GameService: GameService, public LeaderBoardService: LeaderboardService, public router: Router) { }
 
   SelectionMade: true | false = false;
   toggleHighlighted: 'Rock' | 'Paper' | 'Scissors';
@@ -28,9 +29,10 @@ export class GameBaseComponent implements OnInit {
   }
 
   Shoot() {
-    
     this.GameService.CommitOutcome(this.GameService.selection, this.GameService.userName);
-    this.GameService.InputFieldState = true;
+    if (this.GameService.roundNumber == this.GameService.maxRound){
+      this.router.navigateByUrl('/result')
+    }
   }
 
   changeBackground($event){
