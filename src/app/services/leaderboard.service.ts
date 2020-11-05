@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
 import {Leaderboard, LeaderboardEnvelope, LeaderboardsEnvelope } from '../Class/LeaderBoard'
 
 @Injectable({
@@ -10,7 +9,7 @@ export class LeaderboardService {
 
   public Leaderboard?: LeaderboardsEnvelope;
 
-  constructor(private router: Router, public httpClient: HttpClient) { }
+  constructor(public httpClient: HttpClient) { }
 
   GetSomeLeaderBoardShit() {
     let request = this.httpClient.get<LeaderboardsEnvelope>("https://my-json-server.typicode.com/kmalikkhil/json/Leaderboard");

@@ -1,7 +1,11 @@
 export interface PlayerChoice {
-    "PlayerChoice": string,
+    "playerChoice": string,
     "userName": string
 
+}
+
+export interface PlayerChoices {
+    "playerChoices": PlayerChoice[];
 }
 
 export interface GameResult {
@@ -15,14 +19,8 @@ export interface UserName {
     "userName": string
 }
 
-export interface UserNames {
-    "userName": UserName[]
-}
 
-export interface GameResultAndUserName {
-    userName: UserName,
-    "playerChoice": string,
-    "cpuChoice": string,
-    "result": string
 
+export interface GameResults {
+    "gameResults": GameResult[]
 }
