@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { delay } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import {GameResult, PlayerChoice, GameResults, PlayerChoices} from '../Class/game';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { sanitizeIdentifier } from '@angular/compiler';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +12,13 @@ export class GameService {
   // stop the username being changed through the game
   public InputFieldState: boolean = false;
   public maxRound: 1 | 3 | 5;
+  public roundNumber: number = 1;
   public CompName: string = "CPU";
   public userName?: string = null;
   public selection?: 'Rock' | 'Paper' | 'Scissors';
   //push all selections to this array
   public selections: [];
   //Private variables should have an underscore at the beginning to represent it is private
-  public roundNumber: number = 1;
-
   private _AIOption?: string;
   get AIOption(){
     return this._AIOption;
@@ -30,10 +27,8 @@ export class GameService {
   get Outcome(){
     return this._Outcome;
   }
-  private _playerChoiceAndUsername: PlayerChoice[] = [];
-  get playerChoiceAndUsername(){
-    return this._playerChoiceAndUsername;
-  }
+  public playerChoiceAndUsername: PlayerChoice[] = [];
+
 
   private _GameResults: GameResults;
   get GameResults(){
@@ -50,24 +45,24 @@ export class GameService {
     this.maxRound = maxrounds;
   }
 
-  SetplayerChoice(username: string, playerchoice: string ){
+  SetplayerChoice(playerchoice: string, username: string ){
     //set playerchoice array herererere
     let pooPoo:PlayerChoice = {
       playerChoice: playerchoice,
-    userName: username
+      userName: username
     } 
-    this._playerChoiceAndUsername = [...this._playerChoiceAndUsername, pooPoo]
+    this.playerChoiceAndUsername = [...this.playerChoiceAndUsername, pooPoo]
   }
   
   //Use this bad boi
   CommitOutcomes(PlayerChoices: PlayerChoice[]) {
      //the URL is where exactly will be targetted by the request
-    let request = this.httpClient.post<GameResults>("http://localhost:5000/game/round", PlayerChoices)
+    let request = this.httpClient.post<GameResults>("http://localhost:5000/game/rounds", PlayerChoices)
     console.log(request);
     //response is going to be the API reply so we can then allocate the response values to variables
     request.subscribe((response =>{
       this._GameResults = response;
-      this.router.navigateByUrl('results')
+      this.router.navigateByUrl('result');
     })); 
     
   }

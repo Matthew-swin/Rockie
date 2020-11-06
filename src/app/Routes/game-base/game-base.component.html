@@ -18,18 +18,18 @@
             <!-- storing the images or media in the asset folder
     could also put in the URL of an image
     -->
-            <img [ngClass]="{SelectedOption: this.toggleHighlighted == 'Paper'}" class="Image" src="/assets/paper.png" alt="">
+            <img [ngClass]="{SelectedOption: this.toggleHighlighted == 'Paper'}" class="Image" src="/assets/Paper.png" alt="">
             </div>
         <!-- [ngClass]="{SelectedOption: this.toggleHighlighted == 'Scissors'}"
             this works by setting the class "SelectedOption" when the following option is true 
             in this case its when this.toggleHighlighted == the option picked-->
         <div  class="display scissors"
             (click)="SelectOption('Scissors')">
-            <img [ngClass]="{SelectedOption: this.toggleHighlighted == 'Scissors'}" class="Image" src="/assets/scissors.png" alt="">
+            <img [ngClass]="{SelectedOption: this.toggleHighlighted == 'Scissors'}" class="Image" src="/assets/Scissors.png" alt="">
             </div>
         <div  class="display rock"
             (click)="SelectOption('Rock')">
-            <img [ngClass]="{SelectedOption: this.toggleHighlighted == 'Rock'}" class="Image" src="/assets/rock.png" alt="">
+            <img [ngClass]="{SelectedOption: this.toggleHighlighted == 'Rock'}" class="Image" src="/assets/Rock.png" alt="">
             </div>
         <br>
     </div>

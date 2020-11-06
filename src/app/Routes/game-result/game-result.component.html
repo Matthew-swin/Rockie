@@ -2,7 +2,30 @@
 <div *ngIf="this.GameService.Outcome == 'Win'"><h1>Wow this is a surprise... well congrats i guess</h1></div>
 <div *ngIf="this.GameService.Outcome == 'Draw'"><h1>Can even win or lose. What are you doing with your life</h1></div>
 <!-- <h1>{{GameService.Outcome}}</h1> -->
-<div class="container">
+
+<div class="container" *ngFor="let p of this.GameService.GameResults">
+    <div class="Results">
+        <p>{{p.result}}</p>
+
+    </div>
+    
+    <div class="PlayerSection">
+        <p>{{p.userName}}</p>
+        <img class="img" src="../../../assets/{{p.playerChoice}}.png" alt="">
+    </div>
+    <div class="CompSection">
+        <p>{{this.GameService.CompName}}</p>
+        <img class="img" src="../../../assets/{{p.cpuChoice}}.png" alt="">
+
+    </div>
+    
+
+    <br>
+</div>
+
+
+
+<!-- <div class="container">
     <div class="Playerchoice">
         <p [ngClass]="{
             'win':this.GameService.Outcome == 'Win',
@@ -24,7 +47,7 @@
         <div *ngIf="this.GameService.AIOption == 'Paper'"><img src="/assets/paper.png"> </div>
         <div *ngIf="this.GameService.AIOption == 'Scissors'"><img src="/assets/scissors.png"></div>
     </div>
-</div>
+</div> -->
 <a routerLink="base" (click)="tryAgain()">play again</a>
 <br>
 <a routerLink="/Leaderboard" (click)="LeaderBoardService.GetSomeLeaderBoardShit()" >Score board</a>
