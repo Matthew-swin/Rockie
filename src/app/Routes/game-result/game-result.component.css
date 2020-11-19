@@ -1,46 +1,26 @@
-.display{
-    height: 100px;
-    width: 100px;
-    margin: 10px;
-}
-
-.container div {
+.container div{
     display: inline-block;
-    justify-content: center;
-    justify-items: center;
     padding: 30px;
 }
-.Playerchoice{
-    display: inline;
-}
 
-.Compchoice{
-    display: inline;
+.Results {
+    align-self: center;
 }
-
 
 img {
     height: 300px;
     width: 300px;
-    padding: 30px;
-}
-h1 {
-    text-align: center;
     padding: 10px;
 }
-.win{
-font-size: 30px;
+
+.Win {
 color: green;
 }
-.lose{
-font-size: 30px;
-color: red;
+
+.Lose {
+color: red;  
 }
-.draw{
-font-size: 35px;
-color: black;
-}
-.GameResult{
-    font-size: 50px;
-    color: black;
+
+.Draw {
+color: orchid; 
 }

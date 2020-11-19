@@ -1,24 +1,25 @@
-
 <!-- <h1>{{GameService.Outcome}}</h1> -->
 <div *ngFor="let p of this.GameService.GameResults">
-    <p class="GameResult">{{p.gameResult}}</p>
+    <h1 [class.Win]="p.gameResult === 'Win'" [class.Lose]="p.gameResult === 'Lose'"
+        [class.Draw]="p.gameResult === 'Draw'">{{p.gameResult}}</h1>
 </div>
 <div class="container" *ngFor="let p of this.GameService.GameResults">
-    <div class="Results">
-        <p>{{p.turnResult}}</p>
 
-    </div>
-    
-    <div class="PlayerSection">
-        <p>{{p.userName}}</p>
+    <div>
+        <h2>{{p.userName}}</h2>
         <img class="img" src="../../../assets/{{p.playerChoice}}.png" alt="">
     </div>
-    <div class="CompSection">
-        <p>{{this.GameService.CompName}}</p>
+    <div>
+        <h2>{{this.GameService.CompName}}</h2>
         <img class="img" src="../../../assets/{{p.cpuChoice}}.png" alt="">
 
     </div>
-    
+    <div class="Results">
+        <h2 [class.Win]="p.turnResult === 'Win'" [class.Lose]="p.turnResult === 'Lose'"
+            [class.Draw]="p.turnResult === 'Draw'">{{p.turnResult}}</h2>
+
+    </div>
+
 
     <br>
 </div>
@@ -50,4 +51,4 @@
 </div> -->
 <a routerLink="base" (click)="tryAgain()">play again</a>
 <br>
-<a routerLink="/Leaderboard" (click)="LeaderBoardService.GetSomeLeaderBoardShit()" >Score board</a>
+<a routerLink="/Leaderboard" (click)="LeaderBoardService.GetSomeLeaderBoardShit()">Score board</a>
