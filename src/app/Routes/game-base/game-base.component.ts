@@ -2,7 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { LeaderboardService } from 'src/app/services/leaderboard.service';
 import { GameService } from '../../services/game.service'
 import { Router } from '@angular/router';
-import { NUMBER_TYPE } from '@angular/compiler/src/output/output_ast';
+
 
 
 @Component({
@@ -34,7 +34,7 @@ export class GameBaseComponent implements OnInit {
     //increase round number
     this.roundnum = this.roundnum + 1;
     this.GameService.roundNumber = this.roundnum;
-    this.GameService.SetplayerChoice(this.GameService.selection, this.GameService.userName);
+    this.GameService.SetplayerChoice(this.GameService.selection, this.GameService.userName, this.roundnum, this.GameService.maxRound);
     this.SelectionMade = false;
     if (this.roundnum > this.GameService.maxRound){
       this.GameService.CommitOutcomes(this.GameService.playerChoiceAndUsername);

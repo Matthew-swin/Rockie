@@ -10,7 +10,7 @@ import { GameService } from '../../services/game.service'
 })
 export class RoundSelectComponent implements OnInit {
 
-  constructor(private GameService: GameService, public router: Router) { }
+  constructor(private GameService: GameService, public router: Router,public LeaderboardService: LeaderboardService ) { }
 
   ngOnInit(): void {
   }

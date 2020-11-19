@@ -1,9 +1,18 @@
 <p>fuck yeah leaderboard works!</p>
+<h2>Username Win Ratio turns Played</h2>
 
 <div *ngFor="let poo of LeaderBoardService.Leaderboard">
-    <div>{{poo.username}} {{poo.winRatio}}  {{poo.turnPlayed}} </div>
+    <div class="container">
+        <div class="leftColomn">
+            {{poo.username}}
+        </div>
+        <div class="middleColomn">
+            {{poo.winRatio}}
+        </div>
+        <div class="rightColomn">
+            {{poo.turnPlayed}}
+        </div>
+    </div>
 </div>
 
-<a routerLink="base" (click)="tryAgain()">play again</a> 
-
-
+<a routerLink="base" (click)="tryAgain()">play again</a>

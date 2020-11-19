@@ -1,11 +1,11 @@
-<div *ngIf="this.GameService.Outcome == 'Lose'"><h1>Loser Loser Loser Loser</h1></div>
-<div *ngIf="this.GameService.Outcome == 'Win'"><h1>Wow this is a surprise... well congrats i guess</h1></div>
-<div *ngIf="this.GameService.Outcome == 'Draw'"><h1>Can even win or lose. What are you doing with your life</h1></div>
-<!-- <h1>{{GameService.Outcome}}</h1> -->
 
+<!-- <h1>{{GameService.Outcome}}</h1> -->
+<div *ngFor="let p of this.GameService.GameResults">
+    <p class="GameResult">{{p.gameResult}}</p>
+</div>
 <div class="container" *ngFor="let p of this.GameService.GameResults">
     <div class="Results">
-        <p>{{p.result}}</p>
+        <p>{{p.turnResult}}</p>
 
     </div>
     

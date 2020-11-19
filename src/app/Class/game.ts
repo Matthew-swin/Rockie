@@ -1,18 +1,20 @@
-export interface PlayerChoice {
+export interface PlayerChoiceAndRounds {
     "playerChoice": string,
-    "userName": string
-
+    "userName": string,
+    "currentRound": number,
+    "maxRound": number
 }
 
 export interface PlayerChoices {
-    "playerChoices": PlayerChoice[];
+    "playerChoices": PlayerChoiceAndRounds[];
 }
 
 export interface GameResult {
     "playerChoice": string,
     "cpuChoice": string,
-    "result": string,
-    "userName": string
+    "turnResult": string,
+    "userName": string,
+    "gameResult": string
 }
 export interface GameResults {
     "gameResults": GameResult[]
