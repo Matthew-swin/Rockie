@@ -1,7 +1,8 @@
-<p>round-select works!</p>
+<p>Select the amount of rounds</p>
 <div class="container">
-    <div class="RoundSelect" (click)="selectRound(1)"> 1 Round</div>
-    <div class="RoundSelect" (click)="selectRound(3)"> 3 Rounds</div>
-    <div class="RoundSelect" (click)="selectRound(5)"> 5 Rounds</div>
-    <a routerLink="/Leaderboard" (click)="LeaderboardService.GetSomeLeaderBoardShit()">Score board</a>
+    <div class="selectOne" (click)="selectRound(1)"> <img class="image" src="./assets/1.png" alt=""></div>
+    <div class="selectThree" (click)="selectRound(3)"> <img class="image" src="./assets/3.png" alt=""></div>
+    <div class="selectFive" (click)="selectRound(5)"> <img class="image" src="./assets/5.png" alt=""></div>
 </div>
+<a routerLink="/Leaderboard" (click)="LeaderboardService.GetSomeLeaderBoardShit()">Score board</a>
+    

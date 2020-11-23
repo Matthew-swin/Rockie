@@ -1,0 +1,21 @@
+.container {
+    display: grid;
+    grid-template-columns: auto 300px 300px 300px auto;
+    grid-template-rows: auto;
+}
+img {
+    background-color: white;
+    border-radius: 15px;
+}
+
+.selectOne {
+    grid-column-start: 2;
+}
+
+.selectThree {
+    grid-column-start: 3;
+}
+
+.selectFive {
+    grid-column-start: 4;
+}

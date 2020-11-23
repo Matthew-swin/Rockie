@@ -3,10 +3,8 @@
 }
 
 .datBoarderLife {
-    background: #2BCE91;
-    background: -moz-linear-gradient(top, #2BCE91 0%, #30A480 50%, #2DB8C5 100%);
-    background: -webkit-linear-gradient(top, #2BCE91 0%, #30A480 50%, #2DB8C5 100%);
-    background: linear-gradient(to bottom, #2BCE91 0%, #30A480 50%, #2DB8C5 100%);
+
+    min-height: 300px;
     padding: 5px;
     text-align: center;
 }
