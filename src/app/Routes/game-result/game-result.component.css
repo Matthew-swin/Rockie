@@ -1,10 +1,28 @@
-.container div{
-    display: inline-block;
+.container{
+    display: grid;
+    grid-template-columns: auto 400px 100px 400px 100px auto;
+    grid-template-rows: auto;
     padding: 30px;
+}
+.Player {
+    grid-column-start: 2;
+    color: hotpink;
+}
+
+.V {
+    grid-column-start: 3;
+    font: bold;
+    font-size: 100px;
+}
+
+.Cpu {
+    color: hotpink;
+    grid-column-start: 4;
 }
 
 .Results {
     align-self: center;
+    grid-column-start: 5;
 }
 
 img {
@@ -14,13 +32,13 @@ img {
 }
 
 .Win {
-color: green;
+background-color: green;
 }
 
 .Lose {
-color: red;  
+background-color: red; 
 }
 
 .Draw {
-color: orchid; 
+background-color: orchid; 
 }

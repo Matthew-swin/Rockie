@@ -5,11 +5,14 @@
 </div>
 <div class="container" *ngFor="let p of this.GameService.GameResults">
 
-    <div>
+    <div class="Player">
         <h2>{{p.userName}}</h2>
         <img class="img" src="../../../assets/{{p.playerChoice}}.png" alt="">
     </div>
-    <div>
+    <div class="V">
+        <p>VS</p>
+    </div>
+    <div class="Cpu">
         <h2>{{this.GameService.CompName}}</h2>
         <img class="img" src="../../../assets/{{p.cpuChoice}}.png" alt="">
 

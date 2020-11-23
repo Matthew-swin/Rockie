@@ -1,7 +1,41 @@
 .container{
 display: grid;  
+grid-template-columns: auto 300px 300px 300px auto;
+grid-template-rows: auto;
+grid-template-areas: 
+none header1 header2 header3 none
+none left middle right none;
 }
 
-.SpaceEm{
-    display: grid;
+.Heading1 {
+    grid-column-start: 2;
+    
+}
+
+.Heading2 {
+    grid-column-start: 3;
+    
+}
+
+.Heading3 {
+    grid-column-start: 4;
+    
+}
+
+.leftColomn {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-area: "left";
+}
+
+.middleColomn {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-area: "middle";
+}
+
+.rightColomn{
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-area: "middle";
 }
