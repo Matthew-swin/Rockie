@@ -66,11 +66,11 @@ export class GameService {
   CommitOutcomes(PlayerChoices: PlayerChoiceAndRounds[]) {
      //the URL is where exactly will be targetted by the request
     let request = this.httpClient.post<GameResults>("http://localhost:5000/game/rounds", PlayerChoices)
-    console.log(request);
     //response is going to be the API reply so we can then allocate the response values to variables
     request.subscribe((response =>{
       this._GameResults = response;
       this.router.navigateByUrl('result');
+      this.playerChoiceAndUsername = [];
     }));  
     
   }
