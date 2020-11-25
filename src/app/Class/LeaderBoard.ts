@@ -9,7 +9,8 @@ export interface LeaderboardEnvelope {​​
 export interface Leaderboard {​​
     username: string;
     winRatio: number;
-    turnPlayed:number;
+    gamesPlayed:number;
+    last5Games: string
 }​​
 
 

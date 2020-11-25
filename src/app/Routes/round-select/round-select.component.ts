@@ -16,7 +16,8 @@ export class RoundSelectComponent implements OnInit {
   }
 
   selectRound(option: 1 | 3 | 5) {
-    this.GameService.maxRound = option;
+    this.GameService.setMaxRounds(option);
+    console.log(this.GameService.maxRound);
     if (this.GameService.userName == null || this.GameService.userName == "") {
       alert("you need to add a username before starting");
     }

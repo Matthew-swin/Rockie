@@ -32,13 +32,13 @@ export class GameBaseComponent implements OnInit {
 
   Shoot() {
     //increase round number
-    this.roundnum = this.roundnum + 1;
     this.GameService.roundNumber = this.roundnum;
     this.GameService.SetplayerChoice(this.GameService.selection, this.GameService.userName, this.roundnum, this.GameService.maxRound);
     this.SelectionMade = false;
-    if (this.roundnum > this.GameService.maxRound){
+    if (this.roundnum = this.GameService.maxRound){
       this.GameService.CommitOutcomes(this.GameService.playerChoiceAndUsername);
     }
+    this.roundnum = this.roundnum + 1;
   }
 
 

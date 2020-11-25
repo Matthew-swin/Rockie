@@ -1,21 +1,26 @@
 <p>fuck yeah leaderboard works!</p>
 <div class="container">
-    <div class="Heading1"> <h1>Username</h1></div>
-    <div class="Heading2"> <h1>Win Ratio</h1></div>
-    <div class="Heading3"> <h1>turns Played</h1></div>
-    <div *ngFor="let poo of LeaderBoardService.Leaderboard">
-
-        <div class="leftColomn">
-            <p>{{poo.username}}</p>
-            
-        </div>
-        <div class="middleColomn">
-          <p>{{poo.winRatio}}</p>  
-        </div>
-        <div class="rightColomn">
-           <p>{{poo.turnPlayed}}</p>  
-        </div>
+    <div class="Heading1">
+        <h1>Username</h1>
+    </div>
+    <div class="Heading2">
+        <h1>Win Ratio</h1>
+    </div>
+    <div class="Heading3">
+        <h1>Turns Played</h1>
+    </div>
+    <div class="Heading4">
+        <h1>Last 5 Games</h1>
     </div>
 </div>
+<div class="container2" *ngFor="let poo of LeaderBoardService.Leaderboard">
+<p class="leftColomn">{{poo.username}}</p>
+<p class="middleLeftColomn">{{poo.winRatio}}</p>
+<p class="middleRightColomn">{{poo.turnPlayed}}</p>
+<p class="rightColomn">{{poo.last5Games}}</p>
+
+</div>
+
+
 
 <a routerLink="base" (click)="tryAgain()">play again</a>

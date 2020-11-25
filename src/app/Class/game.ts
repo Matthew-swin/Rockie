@@ -2,7 +2,7 @@ export interface PlayerChoiceAndRounds {
     "playerChoice": string,
     "userName": string,
     "currentRound": number,
-    "maxRound": number
+    "maxRound": number 
 }
 
 export interface PlayerChoices {
