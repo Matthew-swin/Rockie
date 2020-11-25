@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     background-image: url(https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg);
+    margin: 0;
     color: white;
+    font-family: 'Noto Serif', serif;
 }

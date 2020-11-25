@@ -34,10 +34,11 @@ text-align: center;
 
 
 .shoot {
+margin-left: 4px;
 display: flex;
 align-self: center;
 background-color: black;
-border: none;
+border: 2px solid purple ;
 border-radius: 5px;
 text-align: center;
 line-height: 50px;
@@ -58,4 +59,9 @@ height: 50px;
     background: none;
 }
 
-
+.playAgainLink {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+}

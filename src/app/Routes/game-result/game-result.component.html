@@ -27,31 +27,6 @@
     <br>
 </div>
 
-
-
-<!-- <div class="container">
-    <div class="Playerchoice">
-        <p [ngClass]="{
-            'win':this.GameService.Outcome == 'Win',
-            'lose':this.GameService.Outcome == 'Lose',
-            'draw':this.GameService.Outcome == 'Draw'
-        }">{{GameService.userName}}</p>
-        <div *ngIf="this.GameService.selection == 'Rock'"><img src="/assets/rock.png"></div>
-        <div *ngIf="this.GameService.selection == 'Paper'"><img src="/assets/paper.png"> </div>
-        <div *ngIf="this.GameService.selection == 'Scissors'"><img src="/assets/scissors.png"></div>
-    </div>
-    <p>vs</p>
-    <div class="Compchoice">
-        <p [ngClass]="{
-            'win':this.GameService.Outcome == 'Lose',
-            'lose':this.GameService.Outcome == 'Win',
-            'draw':this.GameService.Outcome == 'Draw'
-        }">{{GameService.CompName}}</p>
-        <div *ngIf="this.GameService.AIOption == 'Rock'"><img src="/assets/rock.png"></div>
-        <div *ngIf="this.GameService.AIOption == 'Paper'"><img src="/assets/paper.png"> </div>
-        <div *ngIf="this.GameService.AIOption == 'Scissors'"><img src="/assets/scissors.png"></div>
-    </div>
-</div> -->
-<a routerLink="base" (click)="tryAgain()">play again</a>
-<br>
-<a routerLink="/Leaderboard" (click)="LeaderBoardService.GetSomeLeaderBoardShit()">Score board</a>
+<a class="playAgainLink" routerLink="base" (click)="tryAgain()">Play Again</a>
+<div class="paddingBetweenButtons"></div>
+<a class="playAgainLink" routerLink="/Leaderboard" (click)="LeaderBoardService.GetSomeLeaderBoardShit()">Score Board</a>

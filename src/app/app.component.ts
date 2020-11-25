@@ -8,7 +8,7 @@ import { LeaderboardService } from './services/leaderboard.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Lets play a game';  
+  title = 'Do you want to play a game?';  
 
   constructor(public LeaderBoardService: LeaderboardService){
 

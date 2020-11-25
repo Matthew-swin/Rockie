@@ -50,3 +50,10 @@ grid-template-rows: auto;
     background-color: purple;
 }
 
+.playAgainLink {
+    text-decoration: none;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+}
